@@ -41,11 +41,10 @@ namespace GitHubJobs.Domain.Services
 
             try
             {
-
-                url = string.Format("{0}?page={1}", url, page);
+              var  clientUrl = string.Format("{0}?page={1}", url, page);
 
                 //this is the function that calls the api
-                var response = await httpClient.GetAsync(url);
+                var response = await httpClient.GetAsync(clientUrl);
 
                 //convert the json to string 
                 var json = await response.Content.ReadAsStringAsync();
@@ -55,7 +54,7 @@ namespace GitHubJobs.Domain.Services
 
 
                 //Generate the view from the factory
-                var jobViewModel = this._jobViewFactory.JobView(jobs);
+                var jobViewModel = this._jobViewFactory.JobView(jobs, page ?? 1);
 
                 return jobViewModel;
             }

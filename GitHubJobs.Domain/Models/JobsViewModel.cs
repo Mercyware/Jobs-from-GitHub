@@ -18,5 +18,14 @@ namespace GitHubJobs.Domain.Services
         /// The jobs.
         /// </value>
         public IEnumerable<IJob> Jobs { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets the page.
+        /// </summary>
+        /// <value>
+        /// The page.
+        /// </value>
+        public int Page { get; set; }
     }
 }

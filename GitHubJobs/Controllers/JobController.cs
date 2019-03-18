@@ -18,7 +18,7 @@ namespace GitHubJobs.Controllers
         }
 
         // GET: Job
-        [Route("jobs/page")]
+        [Route("jobs/{page}")]
         public async Task<ActionResult> Index(int? page)
         {
             var jobViewModel = await _jobsService.GetJobModelView(page);

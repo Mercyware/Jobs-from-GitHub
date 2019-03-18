@@ -19,7 +19,7 @@ namespace GitHubJobs.Domain.Factory
         /// </summary>
         /// <param name="jobs">The jobs.</param>
         /// <returns></returns>
-        public IJobModelView JobView(IEnumerable<IJob> jobs)
+        public IJobModelView JobView(IEnumerable<IJob> jobs, int page)
         {
             if (jobs == null)
             {
@@ -29,7 +29,8 @@ namespace GitHubJobs.Domain.Factory
             //Generate the view data
             var viewModel = new JobsViewModel
             {
-                Jobs = jobs
+                Jobs = jobs,
+                Page = page + 1
             };
 
             return viewModel;

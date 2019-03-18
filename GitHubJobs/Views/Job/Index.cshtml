@@ -1,5 +1,53 @@
-﻿@{
+﻿@model  GitHubJobs.Interface.ViewModels.IJobModelView
+@{
     ViewBag.Title = "Jobs Listing";
 }
+<section id="display-header">
+    <h3 class="text-center my-2"> Hot Jobs Listing</h3>
+    <hr/>
+</section>
 
-<h2>Index</h2>
+<section id="jobs">
+    <div class="container">
+
+
+        <div class="row mb-4">
+
+            @foreach (var job in Model.Jobs)
+            {
+                <div class="col-6 my-3">
+                    <a href="#">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="text-dark-blue">@job.Title</h4>
+                                <p class="mb-1 text-black">
+                                    <span class="fa fa-briefcase "></span> @job.Company
+                                </p>
+                                <p class="mb-1 text-black">
+                                    <span class="fa fa-map-marker"></span> @job.Location
+                                </p>
+                                <p class="text-right">
+                                    <a href="">Learn more &gt &gt</a>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            }
+
+
+
+        </div>
+
+
+    </div>
+
+</section>
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-md-12 pull-right">
+            @Html.ActionLink("More Jobs", "Index", "Job", new {page = Model.Page}, new {@class = "btn btn-primary"})
+        </div>
+    </div>
+</div>
