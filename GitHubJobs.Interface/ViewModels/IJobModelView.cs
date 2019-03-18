@@ -20,5 +20,30 @@ namespace GitHubJobs.Interface.ViewModels
         /// The page.
         /// </value>
         int Page { get; set; }
+
+        /// <summary>
+        /// Gets or sets the description.
+        /// </summary>
+        /// <value>
+        /// The description.
+        /// </value>
+        string Description { get; set; }
+
+        /// <summary>
+        /// Gets or sets the location.
+        /// </summary>
+        /// <value>
+        /// The location.
+        /// </value>
+        string Location { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets the full time.
+        /// </summary>
+        /// <value>
+        /// The full time.
+        /// </value>
+        string FullTime { get; set; }
     }
 }

@@ -10,8 +10,12 @@ namespace GitHubJobs.Interface
         /// Jobs the view.
         /// </summary>
         /// <param name="jobs">The jobs.</param>
+        /// <param name="description">The description.</param>
+        /// <param name="location">The location.</param>
+        /// <param name="fulltime">The fulltime.</param>
         /// <param name="page">The page.</param>
         /// <returns></returns>
-        IJobModelView JobView(IEnumerable<IJob> jobs, int page);
+        IJobModelView JobView(IEnumerable<IJob> jobs, string description, string location, string fulltime,
+            int page);
     }
 }

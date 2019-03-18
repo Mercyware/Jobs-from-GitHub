@@ -17,11 +17,20 @@ namespace GitHubJobs.Controllers
             this._jobsService = jobsService;
         }
 
-        // GET: Job
-        [Route("jobs/{page}")]
-        public async Task<ActionResult> Index(int? page)
+
+        /// <summary>
+        /// Indexes the specified description.
+        /// </summary>
+        /// <param name="description">The description.</param>
+        /// <param name="location">The location.</param>
+        /// <param name="fulltime">The fulltime.</param>
+        /// <param name="page">The page.</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("jobs")]
+        public async Task<ActionResult> Index(string description, string location, string fulltime, int? page)
         {
-            var jobViewModel = await _jobsService.GetJobModelView(page);
+            var jobViewModel = await _jobsService.GetJobModelView(description, location, fulltime, page);
 
             return View(jobViewModel);
         }

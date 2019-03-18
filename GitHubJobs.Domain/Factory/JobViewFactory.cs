@@ -18,8 +18,14 @@ namespace GitHubJobs.Domain.Factory
         /// Jobs the view.
         /// </summary>
         /// <param name="jobs">The jobs.</param>
+        /// <param name="description">The description.</param>
+        /// <param name="location">The location.</param>
+        /// <param name="fulltime">The fulltime.</param>
+        /// <param name="page">The page.</param>
         /// <returns></returns>
-        public IJobModelView JobView(IEnumerable<IJob> jobs, int page)
+        /// <exception cref="ArgumentNullException">jobs</exception>
+        public IJobModelView JobView(IEnumerable<IJob> jobs, string description, string location, string fulltime,
+            int page)
         {
             if (jobs == null)
             {
@@ -30,7 +36,10 @@ namespace GitHubJobs.Domain.Factory
             var viewModel = new JobsViewModel
             {
                 Jobs = jobs,
-                Page = page + 1
+                Page = page + 1,
+                Description = description,
+                Location = location,
+                FullTime = fulltime
             };
 
             return viewModel;

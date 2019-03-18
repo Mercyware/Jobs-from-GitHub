@@ -12,6 +12,7 @@ namespace GitHubJobs.Interface.Domain.Services
         /// </summary>
         /// <param name="page">The page.</param>
         /// <returns></returns>
-        Task<IJobModelView> GetJobModelView(int? page);
+        Task<IJobModelView> GetJobModelView(string description, string location, string fulltime,
+            int? page = 1);
     }
 }

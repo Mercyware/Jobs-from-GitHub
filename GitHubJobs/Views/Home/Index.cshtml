@@ -16,17 +16,18 @@
                     <h1 class="site-heading mb-0">Do you need a job? Find the best jobs on Github</h1>
                 </div>
                 <div class="col-md-12  ">
-                    <form >
+                    @using (Html.BeginForm("Index", "Job", FormMethod.Get))
+                    {
                         <div class="form-row">
                             <div class=" col-md-6 mb-2 mb-md-5">
-                                <input type="text" class="form-control form-control-lg"
+                                <input type="text" class="form-control form-control-lg" name="description"
                                        placeholder="Data Scientist">
                             </div>
                             <div class=" col-md-3 mb-2 mb-md-5">
-                                <input type="text" class="form-control form-control-lg"
+                                <input type="text" class="form-control form-control-lg" name="location"
                                        placeholder="Location">
                             </div>
-                            
+
                             <div class=" col-md-2 mb-2 mb-md-5">
                                 <select class="form-control form-control-lg" name="fulltime">
                                     <option value="true">Full Time</option>
@@ -39,47 +40,11 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    }
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<section id="jobs">
-    <div class="container">
-
-
-        <div class="row mb-4">
-
-            @foreach (var job in Model.Jobs)
-            {
-                <div class="col-6 my-3">
-                    <a href="#">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="text-dark-blue">@job.Title</h4>
-                                <p class="mb-1 text-black">
-                                    <span class="fa fa-briefcase "></span> @job.Company
-                                </p>
-                                <p class="mb-1 text-black">
-                                    <span class="fa fa-map-marker"></span> @job.Location
-                                </p>
-                                <p class="text-right">
-                                    <a href="">Learn more &gt &gt</a>
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-            }
-
-
-
-        </div>
-
-
-    </div>
-
-</section>
+@JobsDisplayHelper.JobsDisplay(Model)

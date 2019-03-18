@@ -34,14 +34,20 @@ namespace GitHubJobs.Domain.Services
         /// <summary>
         /// Gets the job model view.
         /// </summary>
+        /// <param name="description">The description.</param>
+        /// <param name="location">The location.</param>
+        /// <param name="fulltime">The fulltime.</param>
+        /// <param name="page">The page.</param>
         /// <returns></returns>
-        public async Task<IJobModelView> GetJobModelView(int? page = 1)
+        public async Task<IJobModelView> GetJobModelView(string description, string location, string fulltime,
+            int? page = 1)
         {
             //Connect to the API
 
             try
             {
-              var  clientUrl = string.Format("{0}?page={1}", url, page);
+                var clientUrl = string.Format("{0}?page={1}&description={2}&location={3}&fulltime={4}", url, page,
+                    description, location, fulltime);
 
                 //this is the function that calls the api
                 var response = await httpClient.GetAsync(clientUrl);
@@ -54,7 +60,7 @@ namespace GitHubJobs.Domain.Services
 
 
                 //Generate the view from the factory
-                var jobViewModel = this._jobViewFactory.JobView(jobs, page ?? 1);
+                var jobViewModel = this._jobViewFactory.JobView(jobs, description, location, fulltime, page ?? 1);
 
                 return jobViewModel;
             }
