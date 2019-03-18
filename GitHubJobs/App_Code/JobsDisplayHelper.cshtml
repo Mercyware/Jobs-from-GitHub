@@ -4,7 +4,7 @@
 {
     <section id="jobs">
         <div class="container">
-            @if (jobModel.Jobs != null)
+            @if (jobModel.Jobs.Any())
             {
                 <div class="row mb-4">
 
@@ -16,13 +16,16 @@
                                 <div class="card-body">
                                     <h4 class="text-dark-blue">@job.Title</h4>
                                     <p class="mb-1 text-black">
-                                        <span class="fa fa-briefcase "></span> @job.Company
+                                        <span class="fa fa-building "></span> @job.Company
                                     </p>
                                     <p class="mb-1 text-black">
                                         <span class="fa fa-map-marker"></span> @job.Location
                                     </p>
+                                    <p class="mb-1 text-black">
+                                        <span class="fa fa-briefcase"></span> @job.Type
+                                    </p>
                                     <p class="text-right">
-                                        <a href="">Learn more &gt &gt</a>
+                                        <a href="@job.Url"  target="_blank">Learn more &gt &gt</a>
                                     </p>
                                 </div>
                             </div>
