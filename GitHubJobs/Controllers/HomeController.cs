@@ -15,9 +15,10 @@ namespace GitHubJobs.Controllers
 
         public async  Task<ActionResult> Index()
         {
-            await _jobsService.GetJobModelView();
+            var page = 1;
+           var jobViewModel = await _jobsService.GetJobModelView(page);
 
-            return View();
+            return View(jobViewModel);
         }
 
         public ActionResult About()

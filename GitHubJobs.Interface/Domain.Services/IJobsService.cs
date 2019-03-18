@@ -6,6 +6,12 @@ namespace GitHubJobs.Interface.Domain.Services
 {
     public interface IJobsService
     {
-         Task<IJobModelView> GetJobModelView();
+
+        /// <summary>
+        /// Gets the job model view.
+        /// </summary>
+        /// <param name="page">The page.</param>
+        /// <returns></returns>
+        Task<IJobModelView> GetJobModelView(int? page);
     }
 }

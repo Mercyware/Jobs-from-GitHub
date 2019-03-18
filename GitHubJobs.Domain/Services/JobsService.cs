@@ -35,12 +35,15 @@ namespace GitHubJobs.Domain.Services
         /// Gets the job model view.
         /// </summary>
         /// <returns></returns>
-        public async Task<IJobModelView> GetJobModelView()
+        public async Task<IJobModelView> GetJobModelView(int? page = 1)
         {
             //Connect to the API
 
             try
             {
+
+                url = string.Format("{0}?page={1}", url, page);
+
                 //this is the function that calls the api
                 var response = await httpClient.GetAsync(url);
 

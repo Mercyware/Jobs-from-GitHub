@@ -1,24 +1,98 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿.text-black { color: #000; }
+
+#header a { color: #000000; }
+
+#jobs a { text-decoration: none; }
+
+/** Navigation Bar Color  ***/
+
+.bg-dark-blue { background-color: #0D87B1 !important; }
+
+.text-dark-blue { color: #0D87B1 !important; }
+
+.text-small { font-size: small; }
+
+.text-capitalize { text-transform: capitalize; }
+
+/*** Navigation **/
+
+header.masthead {
+    margin-bottom: 20px;
+    background: no-repeat center center;
+    background-color: #868e96;
+    background-attachment: scroll;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+header.masthead .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #212529;
+    opacity: .5
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading {
+    padding: 20px 0 10px;
+    color: #fff
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+@media only screen and (min-width: 768px) {
+    header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading { padding: 20px 0 }
 }
+
+header.masthead .page-heading, header.masthead .site-heading { text-align: center }
+
+header.masthead .page-heading h1, header.masthead .site-heading h1 {
+    font-size: 50px;
+    margin-top: 0
+}
+
+header.masthead .page-heading .subheading, header.masthead .site-heading .subheading {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.1;
+    display: block;
+    margin: 10px 0 0;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+@media only screen and (min-width: 768px) {
+    header.masthead .page-heading h1, header.masthead .site-heading h1 { font-size: 70px }
+}
+
+header.masthead .post-heading h1 { font-size: 30px }
+
+header.masthead .post-heading .meta, header.masthead .post-heading .subheading {
+    line-height: 1.1;
+    display: block
+}
+
+header.masthead .post-heading .subheading {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px 0 30px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+header.masthead .post-heading .meta {
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    font-family: Lora, 'Times New Roman', serif
+}
+
+header.masthead .post-heading .meta a { color: #fff }
+
+@media only screen and (min-width: 768px) {
+    header.masthead .post-heading h1 { font-size: 55px }
+
+    header.masthead .post-heading .subheading { font-size: 30px }
+}
+
