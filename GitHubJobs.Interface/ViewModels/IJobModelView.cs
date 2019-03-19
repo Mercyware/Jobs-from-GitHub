@@ -3,7 +3,7 @@ using GitHubJobs.Interface.Models;
 
 namespace GitHubJobs.Interface.ViewModels
 {
-    public interface IJobModelView
+    public interface IJobsViewModel
     {
         /// <summary>
         /// Gets or sets the jobs.

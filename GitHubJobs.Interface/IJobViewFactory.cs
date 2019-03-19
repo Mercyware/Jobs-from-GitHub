@@ -15,7 +15,7 @@ namespace GitHubJobs.Interface
         /// <param name="fulltime">The fulltime.</param>
         /// <param name="page">The page.</param>
         /// <returns></returns>
-        IJobModelView JobView(IEnumerable<IJob> jobs, string description, string location, string fulltime,
+        IJobsViewModel JobView(IEnumerable<IJob> jobs, string description, string location, string fulltime,
             int page);
     }
 }

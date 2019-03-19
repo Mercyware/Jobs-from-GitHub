@@ -24,7 +24,7 @@ namespace GitHubJobs.Domain.Factory
         /// <param name="page">The page.</param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException">jobs</exception>
-        public IJobModelView JobView(IEnumerable<IJob> jobs, string description, string location, string fulltime,
+        public IJobsViewModel JobView(IEnumerable<IJob> jobs, string description, string location, string fulltime,
             int page)
         {
             if (jobs == null)

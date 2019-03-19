@@ -8,7 +8,7 @@ using GitHubJobs.Interface.ViewModels;
 
 namespace GitHubJobs.Domain.Services
 {
-    public class JobsViewModel : IJobModelView
+    public class JobsViewModel : IJobsViewModel
     {
         /// <summary>
         /// Gets or sets the jobs.

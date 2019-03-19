@@ -39,7 +39,7 @@ namespace GitHubJobs.Domain.Services
         /// <param name="fulltime">The fulltime.</param>
         /// <param name="page">The page.</param>
         /// <returns></returns>
-        public async Task<IJobModelView> GetJobModelView(string description, string location, string fulltime,
+        public async Task<IJobsViewModel> GetJobModelView(string description, string location, string fulltime,
             int? page = 1)
         {
             //Connect to the API
@@ -64,14 +64,13 @@ namespace GitHubJobs.Domain.Services
 
                 return jobViewModel;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine(e);
                 throw;
             }
         }
 
 
-        //Get The List of available jobs for without parameter
+       
     }
 }
